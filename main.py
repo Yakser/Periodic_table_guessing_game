@@ -6,9 +6,9 @@ import periodic_table
 def check():
     global STREAK
     if entry.get() == periodic[rand_num]:
-
         lbl_status.config(text='Correct', fg='green')
     else:
+
         lbl_status.config(text='Incorrect', fg='red')
         STREAK += 1
         if STREAK == 5:
@@ -42,7 +42,8 @@ def get_ans():
 
 master = tkinter.Tk()
 master.title("Periodic table guessing game")
-master.geometry("250x200")
+master.geometry("220x175")
+master.resizable(0, 0)
 periodic = periodic_table.get_periodic_table()
 STREAK = 0
 rand_num = random.randint(1, 112)
@@ -60,10 +61,11 @@ btn_submit = tkinter.Button(text='Submit', command=check)
 btn_submit.grid(column=2, row=1, padx=5)
 
 btn_gen = tkinter.Button(text='Generate new', command=new_num)
-btn_gen.grid(column=0, row=4, pady=5)
+btn_gen.grid(column=0, row=4, pady=5, padx=1)
 
 btn_ans = tkinter.Button(text='Answer', command=get_ans)
 btn_ans.grid(column=2, row=4)
+
 lbl_ans = tkinter.Label(text='')
 lbl_ans.grid(column=1, row=5)
 
@@ -73,7 +75,7 @@ lbl_status.grid(column=1, row=2)
 lbl_hints = tkinter.Label(text='')
 lbl_hints.grid(column=0, row=3, columnspan=3)
 
-# QUIT BTN
+
 btn_quit = tkinter.Button(text='Exit', command=quit, width=10)
 btn_quit.grid(column=1, row=6)
 
