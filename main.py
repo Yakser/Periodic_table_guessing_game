@@ -17,6 +17,7 @@ def check():
         lbl_status.config(text='Incorrect', fg='red')
         STREAK += 1
         lbl_attempts.config(text='Attempts:' + str(STREAK))
+
         if STREAK <= 2:
             lbl_attempts.config(fg='green')
         elif STREAK == 3:
